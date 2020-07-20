@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
 
 	def new
+		@user = User.new
 	end
 
 	def show
 		@user = User.find(params[:id])
-		@post = Post.find(params[:id])
+		@post = Post.where(params[:id])
 	end
 
 	def edit
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
 		@user.update(user_params)
 		redirect_to user_path(@user.id)
 	end
+
 
 	private
 	def user_params

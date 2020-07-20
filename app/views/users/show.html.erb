@@ -8,3 +8,41 @@
   <%= link_to "変更", edit_user_path %>
 <% end %>
 
+
+
+
+<% @post.each do |post| %>
+  <table>
+			  	<tr>
+			  		<th>
+			  			<%= attachment_image_tag @user, :profile_image, format: 'jpeg', size: "100x100" %>
+			  		</th>
+			  		<th>
+			  			<%= @user.name %>
+			  		</th>
+			  	</tr>
+
+				 <tr>
+					<th><%= attachment_image_tag post, :image, format: 'jpeg', size: "600x400" %></th>
+					<th><%= post.recipe_name %></th>
+					<th><%= post.caption %></th>
+				</tr>
+
+				<tr>
+					<th>
+						<% if post.user == current_user %>
+						  <%= link_to "削除", post_path(post), method: :delete %>
+						<% end %>
+					</th>
+					<th>
+						<% if post.user == current_user %>
+						  <%= link_to "編集", edit_post_path(post) %>
+						<% end %>
+					</th>
+				</tr>
+
+
+	      </table>
+<% end %>
+
+

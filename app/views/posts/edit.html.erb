@@ -1,1 +1,16 @@
 <h1>投稿編集ページ</h1>
+<table>
+　　<tr>
+	　<th><%= attachment_image_tag @post, :image, format: 'jpeg', size: "600x400" %></th>
+	　<th><%= @post.recipe_name %></th>
+	</tr>
+
+	<tr>
+		<th>
+			<%= form_for(@post) do |f| %>
+		       <%=f.text_area :caption %>
+		       <%= f.submit "変更" %>
+		    <% end %>
+		</th>
+	</tr>
+</table>
