@@ -1,48 +1,70 @@
-<h1>ユーザ詳細</h1>
+<div class="container">
+	<div class="row">
+		<div class="wrap">
+			<div class="userarea">
+				<p><%= attachment_image_tag @user, :profile_image, format: 'jpeg', size: "100x100", class: "img-circle pull-left profile-img" %></p>
+				<div class="myinfo">
+				<p class="name"><%= @user.name %></p>
+				<p class="info"><%= @user.userinfo %></p>
 
-<p><%= attachment_image_tag @user, :profile_image, format: 'jpeg', size: "100x100" %></p>
-<p><%= @user.name %></p>
-<p><%= @user.userinfo %></p>
-
-<% if @user.id == current_user.id %>
-  <%= link_to "変更", edit_user_path %>
-<% end %>
-
-
-
-
-<% @post.each do |post| %>
-  <table>
-			  	<tr>
-			  		<th>
-			  			<%= attachment_image_tag @user, :profile_image, format: 'jpeg', size: "100x100" %>
-			  		</th>
-			  		<th>
-			  			<%= @user.name %>
-			  		</th>
-			  	</tr>
-
-				 <tr>
-					<th><%= attachment_image_tag post, :image, format: 'jpeg', size: "600x400" %></th>
-					<th><%= post.recipe_name %></th>
-					<th><%= post.caption %></th>
-				</tr>
-
-				<tr>
-					<th>
-						<% if post.user == current_user %>
-						  <%= link_to "削除", post_path(post), method: :delete %>
-						<% end %>
-					</th>
-					<th>
-						<% if post.user == current_user %>
-						  <%= link_to "編集", edit_post_path(post) %>
-						<% end %>
-					</th>
-				</tr>
-
-
-	      </table>
-<% end %>
+				<% if @user.id == current_user.id %>
+				  <%= link_to "変更", edit_user_path, class: 'btn btn-default' %>
+				<% end %>
+				</div>
+			</div>
+			<% @posts.each do |post| %>
+			<div class="space"></div>
+			<div class="sidespace">
+			<div class="profile_gazou">
+				<%= attachment_image_tag post.user, :profile_image, format: 'jpeg', size: "100x100", class: "img-circle pull-left profile-img" %>
+			</div>
+			<div class="profile_name">
+				<div class="name_space">
+				<%= post.user.name %>
+				<div class="right-display">
+				<% if post.user == current_user %>
+					<%= link_to "編集", edit_post_path(post), class: 'btn btn-default' %>
+				<% end %>
+				<% if post.user == current_user %>
+					<%= link_to "削除", post_path(post), method: :delete, class: 'btn btn-default' %>
+				<% end %>
+				</div>
+				</div>
+				 <div class="recipe_title">
+				  <p class="underline"><%= post.recipe_name %></p>
+			    </div>
+			</div>
+			<div class="content_gazou">
+				<div class="gazou">
+				<%= link_to post_path(post) do %>
+				 <%= attachment_image_tag post, :image, format: 'jpeg', size: "600x400" %>
+				<% end %>
+				</div>
+			</div>
+			<div class="content_comment">
+			    <div class="recipe_caption">
+				  <%= post.caption %>
+			    </div>
+				<% if post.favorited_by?(current_user) %>
+					<%= link_to post_favorites_path(post), method: :delete do %>
+				    <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+				    <p class="glyphicon glyphicon-thumbs-up"></p>
+					<%= post.favorites.count %>
+				    <% end %>
+				<% else %>
+				    <%= link_to post_favorites_path(post), method: :post do %>
+					<i class="fa fa-heart-o" aria-hidden="true"></i>
+					<p class="glyphicon glyphicon-thumbs-up"></p>
+					<%= post.favorites.count %>
+				    <% end %>
+				<% end %>
+					<p class="glyphicon glyphicon-comment"></p>
+	           	  <%= post.post_comments.count %>
+			</div>
+			</div>
+            <% end %>
+	</div>
+   </div>
+</div>
 
 

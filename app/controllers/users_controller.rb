@@ -1,12 +1,15 @@
 class UsersController < ApplicationController
 
+	def top
+	end
+
 	def new
 		@user = User.new
 	end
 
 	def show
 		@user = User.find(params[:id])
-		@post = Post.where(params[:id])
+		@posts = @user.posts
 	end
 
 	def edit

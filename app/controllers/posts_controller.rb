@@ -5,12 +5,13 @@ class PostsController < ApplicationController
 	end
 
 	def index
-		@posts = Post.all
-		@users = User.all
+		@posts = Post.all.order(created_at: :desc)
+		@users = User.all.order(created_at: :desc)
 	end
 
 	def show
 		@post = Post.find(params[:id])
+		@post.user#postのデータに紐づくuserのデータを取ってくる
 		@post_comment = PostComment.new
 	end
 

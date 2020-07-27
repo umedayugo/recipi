@@ -1,11 +1,19 @@
+<div class="hensyu">
+	<div class="fail">
 <h1>プロフィール編集</h1>
+<br>
 <%= form_for(@user) do |f| %>
 	<p>画像</p>
 	<%= f.attachment_field :profile_image %>
+	<br>
 	<p>名前</p>
 	<%= f.text_field :name %>
+	<br>
+	<br>
 	<p>自己紹介</p>
 	<%= f.text_area :userinfo %>
 
 	<%= f.submit "保存" %>
 <% end %>
+</div>
+</div>

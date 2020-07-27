@@ -1,3 +1,99 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.wrap{
+    margin: 0 auto;
+	width: 960px;
+	background-color:silver;
+}
+.space {
+	width: 960px;
+	height: 50px;
+}
+.sidespace{
+	margin-left: 50px;
+	margin-right:50px;
+	width:860px;
+	height:720px;
+	background-color:white;
+}
+.profile_gazou {
+	width: 120px;
+	height:120px;
+	margin-left:20px;
+	margin-top:20px;
+	float: left;
+}
+.profile_name {
+	padding-top:20px;
+    margin-left: 100px;
+   	width: 760px;
+	height: 10px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.name_space {
+	height: 70px;
+}
+.content_gazou {
+	clear:both;
+	margin-left:20px;
+	width: 760px;
+	height: 410px;
+	border-bottom:solid 1px black;
+}
+.content_comment {
+	margin-left:20px;
+	width: 760px;
+	height: 100px;
+}
+.recipe_title {
+	font-weight: bold;
+	height: 25px;
+	font-size: 20px;
+}
+.recipe_caption {
+	overflow: scroll;
+	height: 130px;
+	border: solid 1px silver;
+	margin-bottom:10px
+}
+.userarea{
+	font-weight:bold;
+	width:960px;
+	height:140px;
+	padding:20px 0px 20px 20px;
+	border: solid 1px silver;
+}
+.myinfo{
+	width:820px;
+	height:120px;
+	margin-left:120px;
+}
+.right-display{
+	float:right;
+	margin-right:20px;
+}
+.comments-area{
+	margin-left: 50px;
+	margin-right:50px;
+	padding-left:20px;
+	width:860px;
+	height:70px;
+	background-color:white;
+}
+.comments-line{
+	margin-left: 50px;
+	margin-right:50px;
+	padding-left:20px;
+	width:860px;
+	height:100px;
+	background-color:white;
+	border-top:solid 1px silver;
+}
+
+.underline {
+	text-decoration: underline;
+}
+

@@ -1,11 +1,19 @@
-<h4>新規投稿</h4>
-<%= form_for(@post) do |f| %>
-  <h5>画像</h5>
-  <%= f.attachment_field :image %>
-  <h5>レシピ</h5>
-  <%= f.text_field :recipe_name %>
-  <h5>内容</h5>
-  <%= f.text_area :caption %>
+<div class="hensyu">
+	<div class="fail">
+<div class="container">
+	<div class="row">
+		<h4>新規投稿</h4>
+		<%= form_for(@post) do |f| %>
+		  <h5>画像</h5>
+		  <%= f.attachment_field :image %>
+		  <h5>レシピ</h5>
+		  <%= f.text_field :recipe_name %>
+		  <h5>内容</h5>
+		  <%= f.text_area :caption %>
 
-  <%= f.submit "送信" %>
-<% end %>
+		  <%= f.submit "送信" %>
+		<% end %>
+	</div>
+</div>
+</div>
+</div>
