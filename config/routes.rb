@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 
   resources :posts, only: [:new, :create, :index, :show, :edit, :destroy, :update] do
+  	 get :search, on: :collection
   	 resource :favorites, only: [:create, :destroy]
      resources :post_comments, onyl: [:create, :destroy]
   end
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update]
 
   root 'users#top'
+
 end

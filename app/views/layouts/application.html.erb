@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Recipe</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -29,6 +30,10 @@
 
       <li class="">
           <%= link_to "Post", new_post_path, class:"glyphicon glyphicon-cutlery" %>
+      </li>
+
+      <li class="">
+          <%= link_to "Search", search_posts_path, class:"glyphicon glyphicon-search" %>
       </li>
 
       <li class="">

@@ -38,6 +38,14 @@ class PostsController < ApplicationController
 		redirect_to user_path(current_user.id)
 	end
 
+	def search
+	    if params[:recipe_name].present?
+	      @posts = Post.where('recipe_name LIKE ?', "%#{params[:recipe_name]}%")
+	    else
+	      @posts = Post.none
+	    end
+    end
+
 	private
 	def post_params
 		params.require(:post).permit(:recipe_name, :image, :caption)

@@ -97,3 +97,55 @@
 	text-decoration: underline;
 }
 
+.recipesearch {
+　　border: solid 1px red;
+	width: 960px;
+	height: 200px;
+	text-align: center;
+}
+
+.searchimage {
+	margin-left: 50px;
+	margin-right:50px;
+	width:860px;
+	height:500px;
+	background-color:white;
+}
+
+.recipesearchimage {
+	margin-left: 120px;
+	margin-right:px;
+	padding-top:20px;
+}
+
+.searchname {
+	width: 960px;
+	height: 30px;
+	margin-left: 120px;
+	padding-top:20px;
+	font-weight: bold;
+}
+
+.change-area {
+	padding-top: 20px;
+	margin-left: 20px;
+}
+
+.changespace {
+	margin-left: 50px;
+	margin-right:50px;
+	width:860px;
+	height:630px;
+	background-color:white;
+}
+
+input[type="text"] {
+        width: 300px;
+        height: 40px;
+    }
+
+input[type="password"] {
+        width: 300px;
+        height: 40px;
+    }
+

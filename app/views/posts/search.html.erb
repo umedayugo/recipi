@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="wrap">
+      <div class="recipesearch">
+        <h1>レシピを検索</h1>
+        <%= form_with url: search_posts_path, method: :get, local: true do |f| %>
+          <%= f.text_field :recipe_name %>
+          <%= f.submit :search %>
+        <% end %>
+      </div>
+
+      <% @posts.each do |post|%>
+      <div class="searchimage">
+       <%= link_to post_path(post) do %>
+       <div class="recipesearchimage">
+        <%= attachment_image_tag post, :image, format: 'jpeg', size: "600x400" %>
+      </div>
+       <% end %>
+       <div class="searchname">
+       <%= post.recipe_name %>
+       </div>
+       </div>
+      <% end %>
+    </div>
+  </div>
+</div>

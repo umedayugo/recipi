@@ -44,7 +44,7 @@
 			</div>
 			<div class="comments-area">
 			<%= form_for [@post, @post_comment] do |f| %>
-	  			<%= f.text_area :comment %>
+	  			<%= f.text_area :comment, size: "80x2" %>
 	  			<%= f.submit "コメント" %>
 			<% end %>
 			</div>
